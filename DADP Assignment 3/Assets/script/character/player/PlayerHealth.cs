@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public int health = 10;
     public string currentHealth;
     public float invincibilityTime = 0.5f;
+    public Vector2 checkPoint;
     [Header("DEATH:")]
     public KeyCode autoDeathButton;
     #endregion
@@ -26,9 +27,11 @@ public class PlayerHealth : MonoBehaviour
     private LevelManager _lvlMngr;
     private GameObject _playerSprite;
     private int _currentHealth;
+    
 
     void Awake()
     {
+        checkPoint = new Vector2(0, 0);
         _lvlMngr = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelManager>();
         _currentHealth = health;
         currentHealth = _currentHealth.ToString();
@@ -79,7 +82,14 @@ public class PlayerHealth : MonoBehaviour
     // Kills the player and reloads the current scene.
     public void Die()
     {
-        _lvlMngr.ReloadScene(_lvlMngr.currentScene);
+        if (checkPoint != new Vector2(0, 0))
+        {
+            gameObject.transform.position = checkPoint;
+        }
+        else
+        {
+            _lvlMngr.ReloadScene(_lvlMngr.currentScene);
+        }
     }
 
     // The timer for the invincibility period. You could play around with this and the PowerUp script
@@ -98,5 +108,10 @@ public class PlayerHealth : MonoBehaviour
         col.a = 1f;
         _playerSprite.GetComponent<SpriteRenderer>().color = col;
         Debug.Log("Not Invincible :(");
+    }
+
+    public void SetCheckPoint(Vector2 checkpointPos)
+    {
+        checkPoint = checkpointPos;
     }
 }
