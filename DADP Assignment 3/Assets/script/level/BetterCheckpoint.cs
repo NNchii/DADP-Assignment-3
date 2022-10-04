@@ -16,10 +16,13 @@ public class BetterCheckpoint : MonoBehaviour
 
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<PlayerHealth>().SetCheckPoint(gameObject.transform.position);
-        Debug.Log(gameObject.transform.position);
+        if(collision.name == "Player")
+        {
+            collision.GetComponent<PlayerHealth>().SetCheckPoint(gameObject.transform.position);
+            Debug.Log(gameObject.transform.position);
+        }
     }
+
 }

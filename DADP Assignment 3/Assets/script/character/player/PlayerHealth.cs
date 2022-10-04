@@ -85,11 +85,15 @@ public class PlayerHealth : MonoBehaviour
         if (checkPoint != new Vector2(0, 0))
         {
             gameObject.transform.position = checkPoint;
+            GainHealth(3);
         }
         else
         {
             _lvlMngr.ReloadScene(_lvlMngr.currentScene);
         }
+
+
+
     }
 
     // The timer for the invincibility period. You could play around with this and the PowerUp script

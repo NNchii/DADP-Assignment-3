@@ -22,9 +22,11 @@ public class BetterKillBox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        
         if(col.gameObject == _player)
         {
-            _lvlMngr.ReloadScene(_lvlMngr.currentScene);
+            _player.GetComponent<PlayerHealth>().Die();
+            //_lvlMngr.ReloadScene(_lvlMngr.currentScene);
         }
     }
 }
