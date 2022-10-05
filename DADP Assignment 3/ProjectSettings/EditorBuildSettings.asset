@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/scn/WSOA2023 - 2021 - CCF Base.unity
+    path: Assets/scn/MainMenu.unity
+    guid: a593f8a848597424bb1ff10504529fd7
+  - enabled: 1
+    path: Assets/scn/Game.unity
     guid: 26b6cf9d44f01ec4c9a70e4363c1ba5b
   m_configObjects: {}

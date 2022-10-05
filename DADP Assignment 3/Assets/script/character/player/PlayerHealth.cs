@@ -96,9 +96,6 @@ public class PlayerHealth : MonoBehaviour
         {
             _lvlMngr.ReloadScene(_lvlMngr.currentScene);
         }
-
-
-
     }
 
     // The timer for the invincibility period. You could play around with this and the PowerUp script
