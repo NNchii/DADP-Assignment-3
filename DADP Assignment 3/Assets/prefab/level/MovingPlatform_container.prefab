@@ -507,7 +507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1309806486969513467
 Transform:
   m_ObjectHideFlags: 0
@@ -745,8 +745,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0.4}
   m_EdgeRadius: 0.05
   m_Points:
-  - {x: -0.47566512, y: 0}
-  - {x: 0.47160864, y: 0}
+  - {x: -0.65098476, y: -0.006943226}
+  - {x: 0.6503997, y: -0.013886929}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -961,7 +961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1539077630057219016
 Transform:
   m_ObjectHideFlags: 0
@@ -1759,8 +1759,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4460567515907181050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
-  m_LocalScale: {x: 0.55, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0012, y: 1.07, z: 0}
+  m_LocalScale: {x: 1.5156348, y: 7.0681114, z: 1}
   m_Children:
   - {fileID: 1309806486969513467}
   - {fileID: 1539077630057219016}
@@ -1807,7 +1807,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 3683de0b24742604c8aa93afced0b704, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d76b98d6918c5594aa4c8abc8fdb2c6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
