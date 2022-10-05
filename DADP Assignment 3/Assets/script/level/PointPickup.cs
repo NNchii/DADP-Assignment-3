@@ -30,18 +30,23 @@ public class PointPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        
         // Check to see if it's the player, if it is add to the score,
         // and instatiate the effects for this pickup.
         if (col.gameObject == _player)
         {
-            _lvlMngr.AddPointsToScore(scoreToAdd);
-
-            // Instantiate effects if there are any.
-            if (vfx != null)
-                Instantiate(vfx, this.transform.position, Quaternion.identity);
-            if (sfx != null)
-                Instantiate(sfx, this.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            if (_player.GetComponent<PlayerHealth>().GetCurrentHealth() !=3)
+            {
+                //_lvlMngr.AddPointsToScore(scoreToAdd);
+                _player.GetComponent<PlayerHealth>().GainHealth(1);
+                // Instantiate effects if there are any.
+                if (vfx != null)
+                    Instantiate(vfx, this.transform.position, Quaternion.identity);
+                if (sfx != null)
+                    Instantiate(sfx, this.transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 #region CLASS DESCRIPTION:
 /* 
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public string currentHealth;
     public float invincibilityTime = 0.5f;
     public Vector2 checkPoint;
+    public GameObject healthBar;
     [Header("DEATH:")]
     public KeyCode autoDeathButton;
     #endregion
@@ -40,6 +42,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+
+        healthBar.GetComponent<Slider>().value = _currentHealth;
+        
         // Allows you to kill the player using a key for debugging and testing purposes.
         if (Input.GetKeyDown(autoDeathButton))
             Die();
@@ -85,7 +90,7 @@ public class PlayerHealth : MonoBehaviour
         if (checkPoint != new Vector2(0, 0))
         {
             gameObject.transform.position = checkPoint;
-            GainHealth(3);
+            GainHealth(1);
         }
         else
         {
@@ -117,5 +122,10 @@ public class PlayerHealth : MonoBehaviour
     public void SetCheckPoint(Vector2 checkpointPos)
     {
         checkPoint = checkpointPos;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
     }
 }
