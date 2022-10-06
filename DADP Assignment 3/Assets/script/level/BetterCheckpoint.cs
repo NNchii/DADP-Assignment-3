@@ -21,7 +21,7 @@ public class BetterCheckpoint : MonoBehaviour
         if(collision.name == "Player")
         {
             collision.GetComponent<PlayerHealth>().SetCheckPoint(gameObject.transform.position);
-            Debug.Log(gameObject.transform.position);
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 

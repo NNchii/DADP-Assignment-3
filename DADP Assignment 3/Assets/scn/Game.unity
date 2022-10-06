@@ -50754,12 +50754,12 @@ PrefabInstance:
     - target: {fileID: 4442908847318351025, guid: cb9be00577e2ff0489c9f59ccbfbb0a9,
         type: 3}
       propertyPath: wallJumpOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4442908847318351025, guid: cb9be00577e2ff0489c9f59ccbfbb0a9,
         type: 3}
       propertyPath: doubleJumpOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4442908847318351025, guid: cb9be00577e2ff0489c9f59ccbfbb0a9,
         type: 3}
@@ -50870,7 +50870,7 @@ PrefabInstance:
     - target: {fileID: 4442908847609045464, guid: cb9be00577e2ff0489c9f59ccbfbb0a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.009999995
+      value: -0.009999994
       objectReference: {fileID: 0}
     - target: {fileID: 4442908847884019586, guid: cb9be00577e2ff0489c9f59ccbfbb0a9,
         type: 3}
@@ -55250,6 +55250,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288959625}
     m_Modifications:
+    - target: {fileID: 6994329247428499405, guid: 783c9f19ca492b2459bb6b1ecde38ea9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9045463188986779746, guid: 783c9f19ca492b2459bb6b1ecde38ea9,
         type: 3}
       propertyPath: m_RootOrder
