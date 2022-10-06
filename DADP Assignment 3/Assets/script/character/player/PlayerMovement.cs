@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     public bool debuggingRays;
     public float knockBackMod = 5f;
     public float bounceHeight = 1f;
+    public Animator anim;
     #endregion
 
     #region NON-SERIALIZED PUBLIC FIELDS:
@@ -128,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && _jumpCounter < _maxJumps && (_controller.isGrounded || _canDoubleJump))
         {
             Jump();
-            playerGFX.GetComponent<Animator>().SetInteger("animState", 2);
+            //playerGFX.GetComponent<Animator>().SetInteger("animState", 2);
         }
             
 
@@ -151,14 +152,24 @@ public class PlayerMovement : MonoBehaviour
             Flip();
             if (_controller.isGrounded)
             {
-                playerGFX.GetComponent<Animator>().SetInteger("animState", 1);
+                //playerGFX.GetComponent<Animator>().SetInteger("animState", 1);
+                anim.SetFloat("Speed", 1);
             }  
         }
         else if (_controller.isGrounded)
         {
-            playerGFX.GetComponent<Animator>().SetInteger("animState", 0);
+            //playerGFX.GetComponent<Animator>().SetInteger("animState", 0);
+            anim.SetFloat("Speed", 0);
         }
-            
+        //if (Input.GetKey("d"))
+        //{
+            //gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 1);
+        //}
+        //if (Input.GetKey("a"))
+        //{
+            //gameObject.transform.localScale = new Vector3(-0.6f, 0.6f, 1);
+        //}
+
         // Calculate direction based on player input.
         _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _direction = _direction.normalized;
